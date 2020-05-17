@@ -10,10 +10,9 @@ namespace FightSimAgainProject
     {
 
         public Enemy()
-        {
+        {//värdesätter de två variabler som finns för enemy
             hp = 10;
             attackDmg = 3;
-
 
         }
     }

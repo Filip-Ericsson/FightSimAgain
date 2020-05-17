@@ -8,18 +8,19 @@ namespace FightSimAgainProject
 {
     class Program
     {
-        static public int enemyCount;
+        static public int enemyCount; //Deklarerar två variablar som används när programmet vill veta hur många fiender som ska staplas i en stack senare. 
         static bool amountCheck = false;
+       
         static void Main(string[] args)
         {
-            
+            Utils utilsClass = new Utils();
             Console.WriteLine("How many enemies do you want to face");
             while (amountCheck == false)
             {
-                enemyCount = TryParse();
+                enemyCount = utilsClass.TryParse(); //kallar på tryParse metoden från Utils. 
                 if (enemyCount <= 0)
                 {
-                    Console.WriteLine("Number has to be larger than 0");
+                    Console.WriteLine("Number has to be larger than 0"); //Om svaret inte är en siffra eller mindre än 0 får spelaren ett felmedelande
                 }
                 else
                 {
@@ -31,21 +32,7 @@ namespace FightSimAgainProject
            
 
         }
-        static int TryParse()
-        {
-            while (true)
-            {
-                if (int.TryParse(Console.ReadLine(), out int number))
-                {
-
-                    return number;
-                }
-                else
-                {
-                    Console.WriteLine("You have to enter a number");
-                }
-            }
-        }
+        
         
         
     }
